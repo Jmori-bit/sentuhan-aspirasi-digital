@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071426">
+  <title>Sentuhan Aspirasi Digital | Majlis Graduasi</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main id="experience">
+    <!-- SKRIN 1: PEMBUKAAN -->
+    <section id="introScreen" class="screen active">
+      <div class="top-label">
+        <span class="status-dot"></span>
+        MAJLIS RASMI SEKOLAH
+      </div>
+
+      
+<div class="school-logo" id="schoolLogo">
+  <img src="assets/logo-sekolah.jpg" alt="Logo rasmi sekolah">
+</div>
+
+
+      <p class="eyebrow">MENGUKIR KENANGAN · MENCIPTA MASA DEPAN</p>
+
+      <h1 class="main-title">
+        SENTUHAN
+        <span>ASPIRASI DIGITAL</span>
+      </h1>
+
+      <div class="gold-line"></div>
+
+      <p class="event-name" id="eventName">
+        MAJLIS GRADUASI 2026
+      </p>
+
+      <p class="school-name" id="schoolName">
+        SMK TELOK DATOK
+      </p>
+
+      <div class="hero-message">
+        <p class="slogan">“Satu Sentuhan, Seribu Impian”</p>
+        <h2>Masa Depan Bermula Di Sini</h2>
+        <p class="intro-description">
+          Setiap impian bermula dengan keberanian.
+          Setiap kejayaan bermula dengan satu langkah.
+        </p>
+      </div>
+
+      <button id="startButton" class="touch-button">
+        <span class="touch-ring"></span>
+        <span class="touch-icon">✦</span>
+        <span>SENTUH UNTUK MERASMIKAN</span>
+        <span class="button-arrow">↗</span>
+      </button>
+
+      <p class="instruction">SILA SENTUH BUTANG UNTUK MEMULAKAN GIMIK</p>
+      <div class="corner-mark corner-tl"></div>
+      <div class="corner-mark corner-br"></div>
+    </section>
+
+    
+<!-- SKRIN BAHARU 1: TANDATANGAN DIGITAL -->
+<section id="signatureScreen" class="screen signature-screen">
+  <div class="new-screen-top">
+    <span class="status-dot"></span>
+    SENTUHAN ASPIRASI DIGITAL
+  </div>
+
+  <div class="signature-heading">
+    <p class="eyebrow">LANGKAH PERTAMA MENUJU ASPIRASI</p>
+    <h2>TANDATANGAN <span>PERASMI</span></h2>
+    <p>Setiap kejayaan bermula dengan satu tekad.</p>
+  </div>
+
+  <div class="signature-card">
+    <div class="signature-card-header">
+      <div>
+        <span class="signature-overline">PENGESAHAN PERASMIAN</span>
+        <h3>Ruang Tandatangan Digital</h3>
+      </div>
+      <span class="signature-seal">✦</span>
+    </div>
+
+    <div class="signature-paper">
+      <span class="paper-label">TANDATANGAN RASMI</span>
+      <canvas id="signatureCanvas"
+              aria-label="Ruang untuk melukis tandatangan"></canvas>
+      <div class="signature-line"></div>
+      <p id="signatureHint">Sila tandatangan di ruang ini menggunakan pen tablet atau jari.</p>
+    </div>
+
+    <div class="signature-toolbar">
+      <div class="signature-colors">
+        <button class="signature-color selected"
+                data-color="#17233b"
+                style="--pen-color:#17233b"
+                aria-label="Dakwat biru gelap"></button>
+        <button class="signature-color"
+                data-color="#174ea6"
+                style="--pen-color:#174ea6"
+                aria-label="Dakwat biru"></button>
+        <button class="signature-color"
+                data-color="#111111"
+                style="--pen-color:#111111"
+                aria-label="Dakwat hitam"></button>
+      </div>
+
+      <button id="clearSignatureButton" class="signature-secondary">
+        <span>↺</span> Padam
+      </button>
+
+      <button id="finishSignatureButton" class="signature-primary" disabled>
+        SAHKAN TANDATANGAN <span>→</span>
+      </button>
+    </div>
+  </div>
+
+  <p class="signature-footer">
+    MAJLIS GRADUASI 2026 <span>·</span> SATU SENTUHAN, SERIBU IMPIAN
+  </p>
+</section>
+
+<!-- SKRIN BAHARU 2: IMBASAN TAPAK TANGAN — REKA BENTUK HOLOGRAM -->
+<section id="palmScreen" class="screen palm-screen">
+  <div class="palm-tech-grid" aria-hidden="true"></div>
+
+  <div class="palm-scan-panel">
+    <div class="palm-corner palm-corner-tl"></div>
+    <div class="palm-corner palm-corner-tr"></div>
+    <div class="palm-corner palm-corner-bl"></div>
+    <div class="palm-corner palm-corner-br"></div>
+
+    <div class="palm-scan-header">
+      <span class="palm-live-dot"></span>
+      <span>BIOMETRIC AUTHENTICATION</span>
+      <span class="palm-header-code">SYS.2026 // ACTIVE</span>
+    </div>
+
+    
+<div class="palm-scan-content">
+  <div class="palm-scan-label">
+    <span id="palmScanningText">SCANNING...</span>
+    <span class="palm-scan-bars">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </span>
+  </div>
+
+  <button id="palmScanButton" class="palm-scan-button"
+    aria-label="Sentuh tapak tangan hologram untuk memulakan simulasi imbasan">
+
+    <!-- Kekalkan grafik SVG hologram asal -->
+    
+<img
+  class="palm-illustration"
+  src="assets/hologram-hand.png"
+  alt="Hologram tapak tangan"
+  draggable="false"
+/>
+
+
+    <span class="palm-scan-line"></span>
+    <span class="palm-target-ring"></span>
+    <span class="palm-button-label">SENTUH UNTUK IMBAS</span>
+    <span class="palm-button-subtitle">PALM RECOGNITION SYSTEM</span>
+  </button>
+</div>
+
+
+    <div class="palm-scan-bottom">
+      <span>BIOMETRIC ID: <b>ASP-2026</b></span>
+      <span id="palmStatus" aria-live="polite"><i class="palm-status-dot"></i> MENUNGGU SENTUHAN PERASMI</span>
+    </div>
+  </div>
+
+  <aside class="palm-event-panel">
+    <div class="palm-school-mark">
+      <img src="assets/logo-sekolah.jpg" alt="Logo rasmi sekolah">
+    </div>
+    <p class="palm-school-caption" id="palmSchoolCaption">SMK TELOK DATOK</p>
+    <p class="palm-event-kicker">MAJLIS RASMI SEKOLAH</p>
+    <h2 class="palm-event-title">MAJLIS<br><span>GRADUASI 2026</span></h2>
+    <div class="palm-gold-rule"><span>◆</span></div>
+    <p class="palm-event-subtitle">SENTUHAN ASPIRASI DIGITAL</p>
+
+    <div class="palm-official">
+      
+<div class="palm-official-photo">
+  <img
+    src="assets/gambar-perasmi.jpg"
+    alt="Gambar rasmi perasmi Majlis Graduasi 2026"
+    class="palm-official-image"
+  />
+  <small>GAMBAR PERASMI</small>
+</div>
+      <div class="palm-official-info">
+        <p>DIRASMIKAN OLEH</p>
+        <div class="palm-mini-rule"></div>
+        <h3>TUAN MOHD ZAFROL BIN ABDULLAH</h3>
+        <span>PENGETUA</span>
+        <span>SMK TELOK DATOK</span>
+      </div>
+    </div>
+
+    <div class="palm-event-details">
+      <div class="palm-detail-icon">▦</div>
+      <div><b>TARIKH</b><span>14 NOVEMBER 2026 (SABTU)</span></div>
+      <div class="palm-detail-icon">◷</div>
+      <div><b>MASA</b><span>8.00 PAGI</span></div>
+      <div class="palm-detail-icon">⌖</div>
+      <div><b>TEMPAT</b><span>DEWAN SEKOLAH</span></div>
+    </div>
+  </aside>
+</section>
+
+    <!-- SKRIN 2: COUNTDOWN -->
+    <section id="countdownScreen" class="screen countdown-screen">
+      <p class="eyebrow">DETIK MENUJU KEMUNCAK</p>
+      <h2 class="countdown-heading">BERSIAP SEDIA</h2>
+
+      <div id="countdownStage" class="countdown-stage">
+        <div class="countdown-orbit orbit-one"></div>
+        <div class="countdown-orbit orbit-two"></div>
+        <div class="countdown-number" id="countdownNumber"
+             aria-live="assertive">10</div>
+        <div class="countdown-progress"></div>
+      </div>
+
+      <p class="countdown-caption" id="countdownCaption">
+        MENYATUKAN HARAPAN
+      </p>
+
+      <p class="countdown-subtitle">
+        Satu langkah menuju seribu impian
+      </p>
+    </section>
+
+    <!-- SKRIN 3: KEMUNCAK DAN PAPARAN RASMI -->
+    
+<section id="finalScreen" class="screen final-screen">
+  <div class="final-glow"></div>
+  <div class="final-rays"></div>
+
+  <div class="final-geometry" aria-hidden="true"></div>
+  <div class="final-corner-frame" aria-hidden="true"></div>
+
+  <canvas id="finaleFireworksCanvas" aria-hidden="true"></canvas>
+
+  <div class="final-content">
+
+        
+<div class="final-emblem final-school-emblem">
+  <img
+    src="assets/logo-sekolah.jpg"
+    alt="Logo rasmi SMK Telok Datok"
+  />
+</div>
+
+        <p class="eyebrow">DETIK BERSEJARAH · GENERASI GEMILANG</p>
+
+        <p class="final-school" id="finalSchoolName">
+          SMK TELOK DATOK
+        </p>
+
+        <h2 class="final-title">
+          MAJLIS <span>GRADUASI</span>
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p class="final-year" id="finalYear">2026</p>
+
+        <h3 class="congratulations">
+          TAHNIAH KEPADA SEMUA GRADUAN
+        </h3>
+
+        <p class="final-quote">
+          “Melangkah dengan ilmu, melakar masa depan
+          dengan kejayaan.”
+        </p>
+
+        <p class="final-slogan">SATU SENTUHAN, SERIBU IMPIAN</p>
+      </div>
+
+      <p class="photo-hint">
+        MERAKAM KENANGAN · MENGHARGAI PERJUANGAN
+      </p>
+    </section>
+  </main>
+
+  <!-- PANEL OPERATOR -->
+  <aside id="operatorPanel" class="operator-panel" hidden>
+    <div class="operator-header">
+      <div>
+        <strong>PANEL OPERATOR</strong>
+        <p>Kawalan teknikal gimik</p>
+      </div>
+      <button id="closeOperatorButton" class="small-button"
+              aria-label="Tutup panel operator">✕</button>
+    </div>
+
+    <div class="operator-status">
+      Status: <strong id="statusText">Sedia</strong>
+    </div>
+
+    <div class="operator-actions">
+      <button id="operatorStartButton" class="control-button primary">
+        ▶ Mulakan gimik
+      </button>
+      <button id="skipButton" class="control-button">
+        ⏭ Langkau countdown
+      </button>
+      <button id="resetButton" class="control-button">
+        ↺ Kembali ke skrin awal
+      </button>
+      <button id="fullscreenButton" class="control-button">
+        ⛶ Skrin penuh (F)
+      </button>
+      <button id="soundButton" class="control-button">
+        ♫ Bunyi: Aktif
+      </button>
+    </div>
+
+    <p class="operator-help">
+      Pintasan: O = buka/tutup panel · F = skrin penuh ·
+      Esc = tutup panel sahaja
+    </p>
+  </aside>
+
+  <button id="operatorToggle" class="operator-toggle"
+          aria-label="Buka panel operator"
+          title="Panel operator (O)">⚙</button>
+
+  <div id="notice" class="notice" role="status"
+       aria-live="polite"></div>
+
+  <div id="audioFallback" class="audio-fallback" hidden>
+    Audio tidak tersedia. Visual masih boleh diteruskan.
+  </div>
+</body>
+</html>
